@@ -7,14 +7,15 @@ public class Validator {
         return true;
         //checks if operation is encode or decode.
         // if its valid  - operation = encode
-        String encode = "encode";
-        boolean isValid = operation.equalsIgnoreCase( String:"encode")
+        boolean isValid = operation.equalsIgnoreCase( String:"encode") ||
+                            operation.equalsIgnoreCase(String: "decode" );
     }
         public boolean messageValidator(String message){
+            boolean isBlankOrEmpty = message.isBlank() && message.isEmpty();
             return true;
-            //to check that its not empty for message
+            //to check that it's not empty for message
         }
-            public boolean keyValidator(int key){
+        public boolean keyValidator(int key) {
                 return true;
             }
 }
