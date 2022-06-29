@@ -1,13 +1,15 @@
 package com.jtaraya.util;
 
+import com.jtaraya.models.UserInput;
+
 public class Validator {
     // have three methods.
     // note with public access modifiers
 
-    public boolean isValid(String o, String m, int k){
-        boolean oIsValid = operationValidator(o);
-        boolean mIsValid = operationValidator(m);
-        boolean kIsValid = operationValidator(k);
+    public boolean isValid(UserInput userInput){
+        boolean oIsValid = operationValidator(userInput.getOperation());
+        boolean mIsValid = operationValidator(userInput.getMessage());
+        boolean kIsValid = operationValidator(userInput.getKey());
 
         return oIsValid && mIsValid && kIsValid;
     }
