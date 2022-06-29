@@ -3,6 +3,14 @@ package com.jtaraya.util;
 public class Validator {
     // have three methods.
     // note with public access modifiers
+
+    public boolean isValid(String o, String m, int k){
+        boolean oIsValid = operationValidator(o);
+        boolean mIsValid = operationValidator(m);
+        boolean kIsValid = operationValidator(k);
+
+        return oIsValid && mIsValid && kIsValid;
+    }
     private boolean operationValidator(String operation){
 
         //checks if operation is encode or decode.
