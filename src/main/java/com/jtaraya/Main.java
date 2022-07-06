@@ -1,5 +1,7 @@
 package com.jtaraya;
 
+import com.jtaraya.models.UserInput;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,6 +12,7 @@ public class Main {
         String operation;
         String message;
         int key;
+        UserInput userinput = new UserInput();
 
         System.out.println("Choose the operation (encode || decode)");
         operation = scanner.nextLine();
@@ -22,6 +25,13 @@ public class Main {
         System.out.println("Enter the key: ");
         key = scanner.nextInt();
         System.out.println("");
+
+        userinput.setOperation(operation);
+        userinput.setMessage(message);
+        userinput.setKey(key);
+
+
+
 
 
 
