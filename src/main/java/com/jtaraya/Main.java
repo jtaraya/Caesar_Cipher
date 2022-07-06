@@ -1,6 +1,7 @@
 package com.jtaraya;
 
 import com.jtaraya.models.UserInput;
+import com.jtaraya.util.Validator;
 
 import java.util.Scanner;
 
@@ -12,7 +13,8 @@ public class Main {
         String operation;
         String message;
         int key;
-        UserInput userinput = new UserInput();
+        UserInput userInput = new UserInput();
+        Validator validator = new Validator();
 
         System.out.println("Choose the operation (encode || decode)");
         operation = scanner.nextLine();
@@ -26,17 +28,22 @@ public class Main {
         key = scanner.nextInt();
         System.out.println("");
 
-        userinput.setOperation(operation);
-        userinput.setMessage(message);
-        userinput.setKey(key);
+
+        userInput.setOperation(operation);
+        userInput.setMessage(message);
+        userInput.setKey(key);
+
+        boolean userInputIsValid = validator.isValid(userInput);
+
+        if (userInputIsValid){
+            System.out.println("Proceed");
+        } else {
+            System.out.println("Do not proceed");
+        }
 
 
 
-
-
-
-
-
+        
 
         scanner.close();
 
