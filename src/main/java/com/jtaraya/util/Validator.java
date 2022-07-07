@@ -7,18 +7,18 @@ public class Validator {
     // note with public access modifiers
 
     public boolean isValid(UserInput userInput){
-        boolean oIsValid = operationValidator(userInput.getOperation());
-        boolean mIsValid = operationValidator(userInput.getMessage());
-        boolean kIsValid = operationValidator(userInput.getKey());
+        boolean oIsValid = operationValidator(userInput.getOperation(), anotherString);
+        boolean mIsValid = operationValidator(userInput.getMessage(), anotherString);
+        boolean kIsValid = operationValidator(userInput.getKey(), anotherString);
 
         return oIsValid && mIsValid && kIsValid;
     }
-    private boolean operationValidator(String operation){
+    private boolean operationValidator(String operation, String anotherString){
 
         //checks if operation is encode or decode.
         // if its valid  - operation = encode
-        return operation.equalsIgnoreCase(String:"encode") ||
-                operation.equalsIgnoreCase(String: "decode" );
+        return operation.equalsIgnoreCase( anotherString "encode") ||
+                operation.equalsIgnoreCase( anotherString "decode" );
     }
         private boolean messageValidator(String message){
             return ! (message.isBlank() && message.isEmpty());
