@@ -6,6 +6,7 @@ import com.jtaraya.util.Validator;
 import java.util.Scanner;
 
 public class GetUserInput {
+    public static UserInput input;
     public static boolean getUserInput(){
         Scanner scanner = new Scanner(System.in);
 
@@ -32,6 +33,9 @@ public class GetUserInput {
         userInput.setKey(key);
         userInput.setMessage(message);
         userInput.setOperation(operation);
+
+        input = userInput;
+
         scanner.close();
 
 

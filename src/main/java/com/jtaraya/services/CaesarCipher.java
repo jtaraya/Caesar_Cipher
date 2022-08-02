@@ -21,7 +21,7 @@ public class CaesarCipher {
         return output.toString();
     }
 
-    public String decode() {
+    public String decode(String message, int key) {
         // TODO takes cipher text as input and returns plain text
         return "";
     }
