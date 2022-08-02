@@ -9,30 +9,37 @@ public class CaesarCipher {
 
     public String encode(String message, int key) {
         char[] messageArray = message.toCharArray();
-
         StringBuilder output = new StringBuilder();
-
-        for (char item : messageArray) {
-            char temp = shiftChar(item, key);
-            output = new StringBuilder(output.append(temp));
+        for (char item: messageArray){
+            char temp = shiftChar(item, key,'e');
+            output.append(temp);
         }
-
-
         return output.toString();
     }
 
     public String decode(String message, int key) {
-        // TODO takes cipher text as input and returns plain text
-        return "";
+        //TODO takes cipherText as input and return plainText
+        char[] messageArray = message.toCharArray();
+        StringBuilder output = new StringBuilder();
+        for (char item: messageArray){
+            char temp = shiftChar(item, key,'d');
+            output.append(temp);
+        }
+        return output.toString();
     }
 
-    private char shiftChar(char c, int k) {
-
+    private char shiftChar(char c, int k, char ops) {
         int oldIndex = ALPHABET.indexOf(c);
         if (oldIndex == -1){
             return c;
         }
-        int newIndex = (oldIndex + k) % 26;
+
+        int newIndex;
+        if (ops ==  'e') {
+            newIndex = (oldIndex + k) % 26;
+        } else {
+            newIndex = (oldIndex - k) % 26;
+        }
 
         int pos;
         char cipherChar;
