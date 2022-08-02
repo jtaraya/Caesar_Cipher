@@ -32,6 +32,7 @@ public class GetUserInput {
         userInput.setKey(key);
         userInput.setMessage(message);
         userInput.setOperation(operation);
+        scanner.close();
 
 
         return validator.isValid(userInput);
