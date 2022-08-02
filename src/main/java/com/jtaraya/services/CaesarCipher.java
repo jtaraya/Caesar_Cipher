@@ -18,7 +18,7 @@ public class CaesarCipher {
         }
 
 
-        return message;
+        return output.toString();
     }
 
     public String decode() {
@@ -27,10 +27,11 @@ public class CaesarCipher {
     }
 
     private char shiftChar(char c, int k) {
-        if( c == ' '){
+
+        int oldIndex = ALPHABET.indexOf(c);
+        if (oldIndex == -1){
             return c;
         }
-        int oldIndex = ALPHABET.indexOf(c);
         int newIndex = (oldIndex + k) % 26;
 
         int pos;
