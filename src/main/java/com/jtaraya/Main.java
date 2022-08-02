@@ -16,24 +16,28 @@ public class Main {
         UserInput userInput = new UserInput();
         Validator validator = new Validator();
 
-        System.out.println("Choose the operation (encode || decode)");
+        System.out.println("Choose the operation (*encode* || *decode*)");
         operation = scanner.nextLine();
         System.out.println("");
 
-        System.out.println("Enter your message: ");
+        System.out.print("Enter your message: ");
         message = scanner.nextLine();
         System.out.println("");
 
-        System.out.println("Enter the key: ");
+        System.out.print("Enter the key: ");
         key = scanner.nextInt();
         System.out.println("");
 
 
-        userInput.setOperation(operation);
-        userInput.setMessage(message);
+
         userInput.setKey(key);
+        userInput.setMessage(message);
+        userInput.setOperation(operation);
+
 
         boolean userInputIsValid = validator.isValid(userInput);
+
+        //if true or not
 
         if (userInputIsValid){
             System.out.println("Proceed");
