@@ -27,6 +27,9 @@ public class CaesarCipher {
     }
 
     private char shiftChar(char c, int k) {
+        if( c == ' '){
+            return c;
+        }
         int oldIndex = ALPHABET.indexOf(c);
         int newIndex = (oldIndex + k) % 26;
 
